@@ -1,22 +1,22 @@
-const express = require('express');
+const express = require("express");
 
 const router = require("./router");
 
 class App {
-  constructor () {
-    this.express = express()
-    this.isDev = process.env.NODE_ENV !== 'production'
-    this.middlewares()
-    this.routes()
+  constructor() {
+    this.express = express();
+    this.isDev = process.env.NODE_ENV !== "production";
+    this.middlewares();
+    this.routes();
   }
 
-  middlewares () {
-    this.express.use(express.urlencoded({ extended: false }))
+  middlewares() {
+    this.express.use(express.urlencoded({ extended: false }));
   }
 
-  routes () {
-    this.express.use(router)
+  routes() {
+    this.express.use(router);
   }
 }
 
-module.exports = new App().express
+module.exports = new App().express;
