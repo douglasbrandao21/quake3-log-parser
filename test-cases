@@ -1,0 +1,10 @@
+Unit Tests
+- Testar se o parser retorna o resultado correto dada uma entrada conhecida.
+- Testar se a função dispara um erro caso o log esteja com algum problema. Possíveis problemas:
+    - Iniciar um game sem terminar o game
+    - Killer ser um player que ainda não está presente na lista de players.
+    - Testar caso o arquivo passado como parâmetro não exista.
+
+Integration Tests
+- Testar a busca por todos os jogos
+- Testar a busca por um jogo em específico
