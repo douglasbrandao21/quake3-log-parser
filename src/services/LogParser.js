@@ -19,21 +19,23 @@ class LogParser {
 
       if (isInitOfGameEvent) {
         this.game = {
-          id: 0,
+          _id: 0,
           total_kills: 0,
           players: [],
           kills: {},
         };
-
-        this.gamesCounter += 1;
-
-        this.game.id = this.gamesCounter;
       }
 
       if (isEndOfGame) {
         const hasGameInfo = !!this.game;
 
-        if (hasGameInfo) this.games.push(this.game);
+        if (hasGameInfo) {
+          this.gamesCounter += 1;
+
+          this.game._id = this.gamesCounter;
+
+          this.games.push(this.game);
+        }
       }
 
       if (isKillEvent) {
