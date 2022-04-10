@@ -11,7 +11,7 @@ class LogParser {
   execute(file) {
     const fileLines = file.split("\n");
 
-    fileLines.forEach(line => {
+    fileLines.forEach((line) => {
       const isInitOfGameEvent = line.includes("InitGame:");
       const isEndOfGame = line.includes("ShutdownGame:");
       const isKillEvent = line.includes("Kill:");
@@ -29,7 +29,6 @@ class LogParser {
         const hasGameInfo = !!this.game;
 
         if (hasGameInfo) {
-
           this.games.push(this.game);
         }
       }
@@ -64,4 +63,4 @@ class LogParser {
   }
 }
 
- module.exports = LogParser;
+module.exports = LogParser;
