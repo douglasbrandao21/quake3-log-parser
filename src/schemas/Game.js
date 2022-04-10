@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const GameSchema = new mongoose.Schema({
-    _id: {
-        type: Number,
-        required: true
-    },
     total_kills: {
         type: Number,
         required: true
@@ -19,6 +15,6 @@ const GameSchema = new mongoose.Schema({
     }
 }, {
     versionKey: false
-});
+})
 
 module.exports = mongoose.model("Game", GameSchema);

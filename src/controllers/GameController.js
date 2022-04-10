@@ -2,24 +2,18 @@ const LogParser = require("../services/LogParser");
 const Game = require("../schemas/Game");
 
 class GameController {
-  async index(request, response) {
-    // const logParser = 
+  async index(request, response) { 
+    const games = await Game.find();
 
-    // const games = await logParser.execute();
-
-    // return response.json(games);
+    return response.json(games);
   }
 
   async show(request, response) {
-    // const gameId = request.params.id;
+    const gameId = request.params.id;
 
-    // const logParser = new LogParser(process.env.LOG_PATH);
+    const game = await Game.findById(gameId);
 
-    // const games = await logParser.execute();
-
-    // const game = games.filter((game) => game.id == gameId);
-
-    // return response.json(game);
+    return response.json(game);
   }
 
   async store(request, response) {

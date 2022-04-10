@@ -19,7 +19,6 @@ class LogParser {
 
       if (isInitOfGameEvent) {
         this.game = {
-          _id: 0,
           total_kills: 0,
           players: [],
           kills: {},
@@ -30,9 +29,6 @@ class LogParser {
         const hasGameInfo = !!this.game;
 
         if (hasGameInfo) {
-          this.gamesCounter += 1;
-
-          this.game._id = this.gamesCounter;
 
           this.games.push(this.game);
         }
