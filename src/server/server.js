@@ -1,8 +1,9 @@
 const express = require("express");
 const uploader = require("express-fileupload");
 const mongoose = require("mongoose");
+const errorHandling = require("../middlewares/ErrorHandling");
 
-const router = require("./router");
+const gamesRoutes = require("../routes/games.routes");
 
 class Server {
   constructor() {
@@ -11,6 +12,7 @@ class Server {
     this.setupDatabaseConnection();
     this.middlewares();
     this.routes();
+    this.errorHandling();
   }
 
   setupDatabaseConnection() {
@@ -20,13 +22,17 @@ class Server {
     });
   }
 
+  routes() {
+    this.express.use("/games", gamesRoutes);
+  }
+
   middlewares() {
     this.express.use(express.urlencoded({ extended: false }));
     this.express.use(uploader());
   }
 
-  routes() {
-    this.express.use(router);
+  errorHandling() {
+    this.express.use(errorHandling);
   }
 }
 

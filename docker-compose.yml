@@ -11,7 +11,7 @@ services:
     volumes:
       - ./src/configurations/setup-database.js:/docker-entrypoint-initdb.d/setup-database.js:ro
     networks:
-      - mongo-compose-network
+      - local-network
 networks:
-  mongo-compose-network:
+  local-network:
     driver: bridge

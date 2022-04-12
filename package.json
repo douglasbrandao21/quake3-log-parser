@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "nodemon src/server/index.js -e js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
@@ -11,7 +12,6 @@
     "ioredis": "^5.0.4",
     "line-reader": "^0.4.0",
     "mongoose": "^6.2.10",
-    "mongoose-auto-increment": "^5.0.1",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
@@ -19,6 +19,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "jest": "^27.5.1"
   }
 }
