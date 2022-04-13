@@ -13,13 +13,12 @@ describe("Success cases", () => {
     await Game.deleteMany({});
 
     mongoose.connection.close();
-  })
+  });
 
   it("Should do something", async () => {
-
     expect(1 + 1).toBe(2);
-  })
-})
+  });
+});
 
 describe("Errors cases", () => {
   test("Should do something", () => {

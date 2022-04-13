@@ -13,5 +13,5 @@ class NotFound extends GenericError {}
 module.exports = {
   GenericError,
   BadRequest,
-  NotFound
+  NotFound,
 };

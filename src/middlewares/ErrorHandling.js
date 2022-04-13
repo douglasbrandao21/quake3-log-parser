@@ -8,10 +8,10 @@ const ErrorHandling = (error, request, response, next) => {
     });
   }
 
-  if(error instanceof NotFound) {
+  if (error instanceof NotFound) {
     return response.status(404).json({
       status: "error",
-      message: error.message
+      message: error.message,
     });
   }
 

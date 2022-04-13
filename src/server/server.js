@@ -17,8 +17,8 @@ class Server {
 
   setupDatabaseConnection() {
     mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
-      user: "admin",
-      pass: "admin",
+      user: process.env.MONGO_USER,
+      pass: process.env.MONGO_PASS,
     });
   }
 

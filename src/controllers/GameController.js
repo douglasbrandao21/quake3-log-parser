@@ -1,10 +1,9 @@
 const Game = require("../schemas/Game");
-const StoreGame = require("../services/StoreGame");
+const ConvertFileToGames = require("../services/ConvertFileToGames");
 const GetGameById = require("../services/GetGameById");
 const { BadRequest } = require("../errors/GenericError");
 
 class GameController {
-
   async index(request, response, next) {
     try {
       const games = await Game.find();
@@ -29,15 +28,16 @@ class GameController {
 
   async store(request, response, next) {
     try {
-      const hasFile =
-        request.files != null && request.files.log != null;
+      const hasFile = request.files != null && request.files.log != null;
 
       if (hasFile) {
         const file = request.files.log;
 
-        const storedGames = await StoreGame.execute(file);
+        const games = await ConvertFileToGames.execute(file);
 
-        return response.json(storedGames);
+        const insertedGames = await Game.insertMany(games);
+
+        return response.json(insertedGames);
       }
 
       throw new BadRequest("File with the games was not provided.");
