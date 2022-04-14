@@ -34,6 +34,9 @@ Os testes da aplicação foram desenvolvidos utilizando a biblioteca Jest. Para 
 yarn test
 ```
 
+
+Certifique-se que o sua base de dados de teste esteja totalmente funcional. Os passos para configurá-la serão mostrados a seguir.
+
 ## 🚀 Fazendo deploy da aplicação
 
 Para fazer deploy da aplicação, você vai precisar de duas ferramentas, o Docker e o Docker-compose. 
