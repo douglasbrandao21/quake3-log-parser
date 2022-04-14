@@ -1,21 +1,8 @@
-const mongoose = require("mongoose");
 const Game = require("../../schemas/Game");
-const generateGame = require("../../utils/generateGame");
+const { generateGame } = require("../../utils/generateGame");
 const GetGameById = require("../../services/GetGameById");
 const { BadRequest, NotFound } = require("../../errors/GenericError");
 
-beforeAll(() => {
-  mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
-    user: process.env.MONGO_USER,
-    pass: process.env.MONGO_PASS,
-  });
-});
-
-afterAll(async () => {
-  await Game.deleteMany({});
-
-  mongoose.connection.close();
-});
 
 describe("Success cases", () => {
   it("Should find a game by id if it exists", async () => {

@@ -12,4 +12,20 @@ function generateGame() {
   };
 }
 
-module.exports = generateGame;
+function generateGameWithoutId() {
+  return {
+    total_kills: 4,
+    players: ["Dono da Bola", "Mocinha", "Isgalamido", "Zeh"],
+    kills: {
+      "Dono da Bola": 0,
+      Mocinha: 0,
+      Isgalamido: 1,
+      Zeh: 0,
+    },
+  };
+}
+
+module.exports = {
+  generateGame,
+  generateGameWithoutId,
+};
